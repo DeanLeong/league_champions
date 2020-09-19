@@ -73,8 +73,9 @@ Post MVP -
 |Sept 25| Presentations | Incomplete
 
 ## Priority Matrix
+https://imgur.com/a/QvflsbV
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+
 
 ## Timeframes
 
