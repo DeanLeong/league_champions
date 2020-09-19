@@ -8,7 +8,7 @@ League of Legends Champion Finder
 The final design on this project is to make a website targeted towards people who have never played the game league of legends before. There are currently 150 champions in the game with new releases on a regular basis. The idea is to help new players find champions they may like by searching via a character's "class" so a search for "Fighter" is going to return champions that have "Fighter" in their descriptions.
 
 ## API and Data Sample
-The API I'm going to be using is http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json This seems like a really solid API and it is updated by League of Legends' developer, Riot Games. For some reason on Riot's own API list there is not an API specifically for champions, but there is this one on ddragon that is up to date to the latest patch of the game.
+The API I'm going to be using is http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json This seems like a really solid API and it is updated by League of Legends' developer, Riot Games. For some reason on Riot's own API list there is not an API specifically for champions, but there is this one on ddragon that is up to date to the latest patch of the game. Main site: https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html
 
 ```
 {type: "champion", format: "standAloneComplex", version: "10.19.1", data: {…}}
