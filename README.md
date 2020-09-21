@@ -48,22 +48,26 @@ https://imgur.com/a/PgLN4s8
 ![mobile homepage](https://i.imgur.com/7NzQ0mT.png)
 
 Homepage - Homepage is the primary desktop page of the website. This page will contain the search bar and/or buttons. 
-Champion Page - This page is what will show after a champion's image is clicked. It will display the champion's image and their blurb description. I it will alos include a back button or a search bar if I can figure out how to implement that.
-Homepage Mobile - Same as Homepage but scaled to mobile screens.
-Champion Page Mobile - Same as champion page but scaled to mobile screens. This will be my primary media query.
+
+Homepage Mobile - Same as Homepage but scaled to mobile screens. This will be my primary media query.
+
+Champion Page - This page is what will show after a champion's image is clicked. It will display the champion's image and their blurb description. I it will also include a back button or a search bar if I can figure out how to implement that.
+
+Champion Page Mobile - Same as champion page but scaled to mobile screens. 
 
 ### MVP/PostMVP
 
 MPV -
 1. The champion images are pulled up along with their names and titles.
 2. I want each search to return six results.
-3. A hover function so that when images are hovered over they enlarge and it is clear that the image is clickable.
+3. The page adjusts to a mobile screen.
 
 Post MVP -
 1. Extra UI Interaction.
 2. Show abilities of champion - Might require more APIs.
 3. Another API
 4. Second page with more detain when champion is clicked on.
+5. A hover function so that when images are hovered over they enlarge and it is clear that the image is clickable.
 
 ## Project Schedule
 
