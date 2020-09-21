@@ -44,7 +44,7 @@ const getChampions = async () => { //Grabs the JSON and the champions
     const response = await axios.get(url)
     const champions = Object.values(response.data.data) //Array for the dropdown options.
     console.log(champions)
-    champions.forEach(champion => console.log(champion.tags))
+    champions.forEach(champion => console.log(champion.name, champion.tags, champion.title, champion.image.full))
   } catch (error) {
     console.log(`Error: ${error}`) //Detailed error logging
   }
@@ -52,10 +52,13 @@ const getChampions = async () => { //Grabs the JSON and the champions
 
 getChampions()
 
+champions.forEach(() => {
+  console.log()
+})
 
-
-// response.forEach(getChampions) {
-//   console.log(tags)
+// function generateChampionList() {
+//   const name = champion.
 // }
+
 
 //Code to retrive the champion Images goes here.
