@@ -65,7 +65,7 @@ Post MVP -
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Sept 18-21| Prompt / Wireframes / Priority Matrix / Timeframes / README| Incomplete
+|Sept 18-21| Prompt / Wireframes / Priority Matrix / Timeframes / README| Complete
 |Sept 21| Project Approval / Basic HTML Setup / Basic JS Functionality - The Searchbox or Buttons| Incomplete
 |Sept 22| CSS Design - Make the six boxes to hold the champion info. JS - Make the boxes clickable and go to the second page? | Incomplete
 |Sept 23| MVP - Search function works, Six results come up, The images are hoverable.| Incomplete
