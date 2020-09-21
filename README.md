@@ -62,6 +62,7 @@ Post MVP -
 1. Extra UI Interaction.
 2. Show abilities of champion - Might require more APIs.
 3. Another API
+4. Second page with more detain when champion is clicked on.
 
 ## Project Schedule
 
@@ -77,7 +78,7 @@ Post MVP -
 ## Priority Matrix
 https://imgur.com/a/QvflsbV
 
-
+![priority matrix](https://i.imgur.com/f2dFG1h.png)
 
 ## Timeframes
 
