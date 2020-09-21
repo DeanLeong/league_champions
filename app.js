@@ -44,7 +44,8 @@ const getChampions = async () => { //Grabs the JSON and the champions
     const response = await axios.get(url)
     const champions = Object.values(response.data.data) //Array for the dropdown options.
     console.log(champions)
-    champions.forEach(champion => console.log(champion.name, champion.tags, champion.title, champion.image.full))
+
+    renderChampions(champions)
   } catch (error) {
     console.log(`Error: ${error}`) //Detailed error logging
   }
@@ -52,13 +53,15 @@ const getChampions = async () => { //Grabs the JSON and the champions
 
 getChampions()
 
-champions.forEach(() => {
-  console.log()
-})
+const champ = document.querySelector('.append-champion')
 
-// function generateChampionList() {
-//   const name = champion.
-// }
+function renderChampions() {
+  for (champion in champions) {
+    const championName = document.querySelector(".champion-name")
+    championName.innerHtml = champions[champion].name
+    champ.appendChild(championName);
+    //map function
+  }
+}
 
-
-//Code to retrive the champion Images goes here.
+//champions.forEach(champion => console.log(champion.name, champion.tags, champion.title, champion.image.full))
