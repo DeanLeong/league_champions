@@ -44,6 +44,8 @@ Amumu: {version: "10.19.1", id: "Amumu", key: "32", name: "Amumu", title: "the S
 
 https://imgur.com/a/PgLN4s8
 
+![wireframe homepage](https://imgur.com/Iy4gvO1)
+
 Homepage - Homepage is the primary desktop page of the website. This page will contain the search bar and/or buttons. 
 Champion Page - This page is what will show after a champion's image is clicked. It will display the champion's image and their blurb description. I it will alos include a back button or a search bar if I can figure out how to implement that.
 Homepage Mobile - Same as Homepage but scaled to mobile screens.
