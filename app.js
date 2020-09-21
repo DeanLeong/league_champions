@@ -44,9 +44,7 @@ const getChampions = async () => { //Grabs the JSON and the champions
     const response = await axios.get(url)
     const champions = Object.values(response.data.data) //Array for the dropdown options.
     console.log(champions)
-    champions.forEach((champion) => {
-      console.log(response.data.data.Aatrox.tags)
-    })
+    champions.forEach(champion => console.log(champion.tags))
   } catch (error) {
     console.log(`Error: ${error}`) //Detailed error logging
   }
