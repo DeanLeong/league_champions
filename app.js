@@ -5,24 +5,27 @@
 //ex. response.data.data.${name}.tags
 //Alternatively I can hardcode the list values to the Tags and then use dot notation to access each champion's tags.
 //Now I need a function that will take the const list's strings and search them in each champion's tags.
+//Then I will need a way that pulls up a champion's image and blurb and puts them on the webpage.
 //Object.keys(response.data.data)
 // Object.keys(response.data.data)
 //let championTags = response.data.data.Aatrox.
+//const championsList = Object.keys(response.data.data)
+//console.log(championsList)
+//Object.values(response.data.data)
 
 
-const getOptions = async () => { //Grabs the JSON and uses the JSON info to populate the list.
+const searchOptions = async () => { //Grabs the JSON and uses the JSON info to populate the list.
   const url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json' //The JSON
   try { //Try catch to run the JSON through axios and if it does, list will equal response.data.data
     const response = await axios.get(url)
-    console.log(response.data.data)
-    const classList = ["Controller", "Fighter", "Mage", "Marksman", "Slayer", "Tank", "Support"] //Array for the dropdown options.
+    const classList = ["Controller", "Fighter", "Mage", "Marksman", "Slayer", "Tank"] //Array for the dropdown options. hardcodec classes
     championClassSearch(classList) //runs championClassSearch on list, which populates the dropdown bar with the provided info
   } catch (error) {
     console.log(`Error: ${error}`) //Detailed error logging
   }
 }
 
-getOptions() //Calls getOptions
+searchOptions() //Calls getOptions
 
 function championClassSearch(classList) { //Creates the extra options needed to have a dropdown list according to what is passed into it.
   const select = document.querySelector('select')
@@ -35,13 +38,26 @@ function championClassSearch(classList) { //Creates the extra options needed to 
   })
 }
 
-async function getChampions() {
-  const url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json'
-  try {
-    const response = await axios(url)
-    const championPic = response.data.message
-    champPic(championPic)
+const getChampions = async () => { //Grabs the JSON and the champions
+  const url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json' //The JSON
+  try { //Try catch to run the JSON through axios and if it does, list will equal response.data.data
+    const response = await axios.get(url)
+    const champions = Object.values(response.data.data) //Array for the dropdown options.
+    console.log(champions)
+    champions.forEach((champion) => {
+      console.log(response.data.data.Aatrox.tags)
+    })
   } catch (error) {
-    console.log(`Error: ${error}`)
+    console.log(`Error: ${error}`) //Detailed error logging
   }
 }
+
+getChampions()
+
+
+
+// response.forEach(getChampions) {
+//   console.log(tags)
+// }
+
+//Code to retrive the champion Images goes here.
