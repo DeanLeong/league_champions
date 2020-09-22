@@ -24,7 +24,7 @@
 
 
 function searchOptions() { //Refactored above code, don't need to run JSON yet.
-  const classList = ["Controller", "Fighter", "Mage", "Marksman", "Slayer", "Tank"] //Makes the dropdown search menu use the strings in this array.
+  const classList = ["Support", "Fighter", "Mage", "Marksman", "Assassin", "Tank"] //Makes the dropdown search menu use the strings in this array.
   championClassSearch(classList)
 }
 
@@ -42,13 +42,16 @@ function championClassSearch(classList) { //Creates the extra options needed to 
   })
 }
 
+let champions = ''
+
 const getChampions = async () => { //Grabs the JSON and the champions
   const url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json' //The JSON
   try { //Try catch to run the JSON through axios and if it does, list will equal response.data.data
     const response = await axios.get(url)
-    const champions = Object.values(response.data.data) //Array for the dropdown options.
+    champions = Object.values(response.data.data) //Array for the dropdown options.
     console.log(champions)
-    renderChampions(champions) //renderChampions is going to actually grab all of the info from the API and stick it on the HTML.
+    randomizeChampions(champions)
+    renderChampions(championArray) //renderChampions is going to actually grab all of the info from the API and stick it on the HTML.
   } catch (error) {
     console.log(`Error: ${error}`) //Detailed error logging
   }
@@ -67,18 +70,52 @@ function renderChampions(champions) { //This function will grab the champions wi
     championName.innerText = `${champion.name}`
     champ.appendChild(championName);
 
-    const championTitle = document.createElement('p')
+    const championTitle = document.createElement('h5')
     championTitle.innerText = `${champion.title}`
     champ.appendChild(championTitle);
 
     const championImage = document.createElement('img')
-    championImage.setAttribute('src', champion.image) //parent div and append each element
+    //championImage.setAttribute('src', "https://github.com/DeanLeong/league_champions/blob/master/champion%20copy/Aatrox.png") //parent div and append each element
+
+
 
     console.log(championName)
 
   })
-
+  //randomizeChampions(champions)
 }
+
+
+//let championArray = []
+
+function randomizeChampions(champions) { //use an if else statement for search? If support, run randomize champions etc?
+  for (let i = 0; i < 6; i++) {
+    let num = Math.floor(Math.random() * champions.length)
+    championArray.push(champions[num])
+
+  }
+  console.log(championArray)
+}
+
+
+
+function getValue(e) {
+  e.preventDefault()
+  const optionValue = document.querySelector('#select-class').value
+  console.log(optionValue)
+  let champClass = champions.filter(champion => {
+    return champion.tags.filter(tag => {
+      return tag === optionValue
+    })
+  })
+  console.log(champClass)
+}
+
+const form = document.querySelector('form')
+form.addEventListener('submit', getValue)
+
+
+
 
 //make a new array for renderchampions
 //update the divs within the champion containers
