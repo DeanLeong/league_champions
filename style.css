@@ -4,14 +4,14 @@ body {
 
 .champContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: space-between;
 }
 
-h3 {
+.champName {
   display: flex;
   align-content: space-around;
 }

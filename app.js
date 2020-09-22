@@ -44,6 +44,7 @@ function championClassSearch(classList) { //Creates the extra options needed to 
 
 
 const getChampions = async (optionValue) => { //Grabs the JSON and the champions
+  removePic()
   const url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json' //The JSON
   try { //Try catch to run the JSON through axios and if it does, list will equal response.data.data
     const response = await axios.get(url)
@@ -84,6 +85,7 @@ function randomizeChampions(filteredChampions) { //use an if else statement for 
 function renderChampions(randomizedChampions) { //This function will grab the champions with the appropriate tags when compared to class and display them on screen. There will most likley
   randomizedChampions.map((champion) => { //need to be an if else to compare the search to the champion tags.
     const championName = document.createElement('h3')
+    championName.className = "champName"
     championName.innerText = `${champion.name}`
     champ.appendChild(championName);
 
@@ -110,52 +112,13 @@ function getValue(e) {
   getChampions(optionValue)
 }
 
+
+function removePic() {
+  const oldPic = document.querySelector('.champContainer')
+  while (oldPic.lastChild) {
+    oldPic.removeChild(oldPic.lastChild)
+  }
+}
+
 const form = document.querySelector('form')
 form.addEventListener('submit', getValue)
-
-
-
-
-//make a new array for renderchampions
-//update the divs within the champion containers
-//another function that is like a select champion function that takes the champions object
-//create a new array and push into the array via a for loop with i > 5 for 6
-//array at the index of the math.random, then render the new array.
-//math.random is the index
-
-// let championArray = []
-
-// function getSix(champions) {
-//   for (let i = 0; i < 5; i++) {
-//     championArray.push(champion)
-//     renderchampions()
-//   }
-// }
-
-// getSix()
-
-// function renderChampions(champions) {
-//   let championArray = []
-//   for (let i = 0; i < 5; i++) {
-//     championArray.push(Math.random(champions))
-
-//     const championName = document.createElement('h3')
-//     championName.innerText = `${champion.name}`
-//     champ.appendChild(championName);
-
-//     const championTitle = document.createElement('p')
-//     championTitle.innerText = `${champion.title}`
-//     champ.appendChild(championTitle);
-
-//     const championImage = document.createElement('img')
-
-//   }
-// }
-
-
-
-//getchampions
-//filterchampions
-//randomizechampions
-//renderchampions
-//eventlistener function that invokes getchampions

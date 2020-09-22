@@ -91,8 +91,8 @@ https://imgur.com/a/QvflsbV
 | --- | :---: |  :---: | :---: | :---: |
 | JS Axios | H | 2hrs| 30mins | 30mins |
 | Basic HTML of site | H | 3hrs| 1hrs | 1hrs |
-| JS Search Functionality | H | 4hrs| 5hrs | hrs |
-| Image Results | H | 4hrs| hrs | hrs |
+| JS Search Functionality | H | 8hrs| 5hrs | hrs |
+| Image Results | H | 3hrs| hrs | hrs |
 | Clear old Images | l | 3hrs| hrs | hrs |
 |Breakpoints| H | 5hrs| hrs | hrs |
 | ButtonClick goes to Second page | l | 5hrs| hrs | hrs |
