@@ -14,16 +14,22 @@
 //Object.values(response.data.data)
 
 
-const searchOptions = async () => { //Grabs the JSON and uses the JSON info to populate the list.
-  const url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json' //The JSON
-  try { //Try catch to run the JSON through axios and if it does, list will equal response.data.data
-    const response = await axios.get(url)
-    const classList = ["Controller", "Fighter", "Mage", "Marksman", "Slayer", "Tank"] //Array for the dropdown options. hardcodec classes
-    championClassSearch(classList) //runs championClassSearch on list, which populates the dropdown bar with the provided info
-  } catch (error) {
-    console.log(`Error: ${error}`) //Detailed error logging
-  }
+// const searchOptions = async () => { //Grabs the JSON and uses the JSON info to populate the list.
+//   const url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json' //The JSON
+//   try { //Try catch to run the JSON through axios and if it does, list will equal response.data.data
+//     const response = await axios.get(url)
+//     const classList = ["Controller", "Fighter", "Mage", "Marksman", "Slayer", "Tank"] //Array for the dropdown options. hardcodec classes
+//     championClassSearch(classList) //runs championClassSearch on list, which populates the dropdown bar with the provided info
+//   } catch (error) {
+//     console.log(`Error: ${error}`) //Detailed error logging
+//   }
+// }
+
+function searchOptions() { //Refactored above code, don't need to run JSON yet.
+  const classList = ["Controller", "Fighter", "Mage", "Marksman", "Slayer", "Tank"]
+  championClassSearch(classList)
 }
+
 
 searchOptions() //Calls getOptions
 
@@ -60,7 +66,8 @@ function renderChampions() {
     const championName = document.querySelector(".champion-name")
     championName.innerHtml = champions[champion].name
     champ.appendChild(championName);
-    const championTags = champions.map((championTags) => {
+    const championTags = champions.tags
+    championsTags.map((champions) => {
       return champion.tags
     })
   }
