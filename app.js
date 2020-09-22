@@ -103,9 +103,11 @@ function getValue(e) {
   e.preventDefault()
   const optionValue = document.querySelector('#select-class').value
   console.log(optionValue)
-  let champClass = champions.filter(champion => {
-    return champion.tags.filter(tag => {
-      return tag === optionValue
+  let champClass = champions.map(champion => {
+    champion.tags.filter(tag => {
+      if (tag === optionValue) {
+        console.log(champion)
+      }
     })
   })
   console.log(champClass)
