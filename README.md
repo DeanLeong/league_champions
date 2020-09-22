@@ -89,9 +89,9 @@ https://imgur.com/a/QvflsbV
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| JS Axios | H | 2hrs| hrs | hrs |
-| Basic HTML of site | H | 3hrs| hrs | hrs |
-| JS Search Functionality | H | 4hrs| hrs | hrs |
+| JS Axios | H | 2hrs| 30mins | 30mins |
+| Basic HTML of site | H | 3hrs| 1hrs | 1hrs |
+| JS Search Functionality | H | 4hrs| 5hrs | hrs |
 | Image Results | H | 4hrs| hrs | hrs |
 | Clear old Images | l | 3hrs| hrs | hrs |
 |Breakpoints| H | 5hrs| hrs | hrs |
