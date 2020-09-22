@@ -42,30 +42,47 @@ function championClassSearch(classList) { //Creates the extra options needed to 
   })
 }
 
-let champions = ''
 
-const getChampions = async () => { //Grabs the JSON and the champions
+const getChampions = async (optionValue) => { //Grabs the JSON and the champions
   const url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json' //The JSON
   try { //Try catch to run the JSON through axios and if it does, list will equal response.data.data
     const response = await axios.get(url)
-    champions = Object.values(response.data.data) //Array for the dropdown options.
-    console.log(champions)
-    randomizeChampions(champions)
-    renderChampions(championArray) //renderChampions is going to actually grab all of the info from the API and stick it on the HTML.
+    let champions = Object.values(response.data.data) //Array for the dropdown options.
+    filterChampions(champions, optionValue)
   } catch (error) {
     console.log(`Error: ${error}`) //Detailed error logging
   }
 }
 
-getChampions()
-
 
 const champ = document.querySelector('.champContainer')
 
-let championArray = []
 
-function renderChampions(champions) { //This function will grab the champions with the appropriate tags when compared to class and display them on screen. There will most likley
-  champions.map((champion) => { //need to be an if else to compare the search to the champion tags.
+
+
+function filterChampions(allChampions, optionValue) {
+  let filteredChampions = allChampions.filter(champion =>
+    champion.tags.includes(optionValue)
+  )
+  console.log(filteredChampions)
+  randomizeChampions(filteredChampions)
+}
+
+
+function randomizeChampions(filteredChampions) { //use an if else statement for search? If support, run randomize champions etc?
+  let randomizedChampions = []
+  for (let i = 0; i < 6; i++) {
+    let num = Math.floor(Math.random() * filteredChampions.length)
+    randomizedChampions.push(filteredChampions[num])
+
+  }
+  console.log(randomizedChampions)
+  renderChampions(randomizedChampions)
+}
+
+
+function renderChampions(randomizedChampions) { //This function will grab the champions with the appropriate tags when compared to class and display them on screen. There will most likley
+  randomizedChampions.map((champion) => { //need to be an if else to compare the search to the champion tags.
     const championName = document.createElement('h3')
     championName.innerText = `${champion.name}`
     champ.appendChild(championName);
@@ -75,8 +92,8 @@ function renderChampions(champions) { //This function will grab the champions wi
     champ.appendChild(championTitle);
 
     const championImage = document.createElement('img')
-    //championImage.setAttribute('src', "https://github.com/DeanLeong/league_champions/blob/master/champion%20copy/Aatrox.png") //parent div and append each element
-
+    championImage.setAttribute('src', `./champions/${champion.name}.png`) //parent div and append each element
+    champ.appendChild(championImage)
 
 
     console.log(championName)
@@ -86,31 +103,11 @@ function renderChampions(champions) { //This function will grab the champions wi
 }
 
 
-//let championArray = []
-
-function randomizeChampions(champions) { //use an if else statement for search? If support, run randomize champions etc?
-  for (let i = 0; i < 6; i++) {
-    let num = Math.floor(Math.random() * champions.length)
-    championArray.push(champions[num])
-
-  }
-  console.log(championArray)
-}
-
-
-
 function getValue(e) {
   e.preventDefault()
   const optionValue = document.querySelector('#select-class').value
   console.log(optionValue)
-  let champClass = champions.map(champion => {
-    champion.tags.filter(tag => {
-      if (tag === optionValue) {
-        console.log(champion)
-      }
-    })
-  })
-  console.log(champClass)
+  getChampions(optionValue)
 }
 
 const form = document.querySelector('form')
@@ -154,3 +151,11 @@ form.addEventListener('submit', getValue)
 
 //   }
 // }
+
+
+
+//getchampions
+//filterchampions
+//randomizechampions
+//renderchampions
+//eventlistener function that invokes getchampions
