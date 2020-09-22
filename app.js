@@ -1,28 +1,3 @@
-//An async/await function that calls the JSON and awaits its response. Done by getOptions.
-//Make a list of each class that I want to appear in the search dropdown. Done by championTagSearch.
-//Set up an e handler that puts up the images of six champions that are of the correct tag.
-//I think that I need to set a variable that let me access each champion's name through a loop and grab tags.
-//ex. response.data.data.${name}.tags
-//Alternatively I can hardcode the list values to the Tags and then use dot notation to access each champion's tags.
-//Now I need a function that will take the const list's strings and search them in each champion's tags.
-//Then I will need a way that pulls up a champion's image and blurb and puts them on the webpage.
-//Object.keys(response.data.data)
-// Object.keys(response.data.data)
-//let championTags = response.data.data.Aatrox.
-//const championsList = Object.keys(response.data.data)
-//console.log(championsList)
-//Object.values(response.data.data)
-
-
-//make a new array for renderchampions
-//update the divs within the champion containers
-//another function that is like a select champion function that takes the champions object
-//create a new array and push into the array via a for loop with i > 5 for 6
-//array at the index of the math.random, then render the new array.
-//math.random is the index
-
-
-
 function searchOptions() { //Refactored above code, don't need to run JSON yet.
   const classList = ["Support", "Fighter", "Mage", "Marksman", "Assassin", "Tank"] //Makes the dropdown search menu use the strings in this array.
   championClassSearch(classList)
@@ -90,10 +65,12 @@ function renderChampions(randomizedChampions) { //This function will grab the ch
     champ.appendChild(championName);
 
     const championTitle = document.createElement('h5')
+    championTitle.className = "champTitle"
     championTitle.innerText = `${champion.title}`
     champ.appendChild(championTitle);
 
     const championImage = document.createElement('img')
+    championImage.className = "champImage"
     championImage.setAttribute('src', `./champions/${champion.name}.png`) //parent div and append each element
     champ.appendChild(championImage)
 
