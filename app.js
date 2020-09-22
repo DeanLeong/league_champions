@@ -59,20 +59,59 @@ getChampions()
 
 const champ = document.querySelector('.champContainer')
 
+let championArray = []
+
 function renderChampions(champions) { //This function will grab the champions with the appropriate tags when compared to class and display them on screen. There will most likley
   champions.map((champion) => { //need to be an if else to compare the search to the champion tags.
     const championName = document.createElement('h3')
-    document.createElement //parent div and append each element
     championName.innerText = `${champion.name}`
     champ.appendChild(championName);
+
+    const championTitle = document.createElement('p')
+    championTitle.innerText = `${champion.title}`
+    champ.appendChild(championTitle);
+
+    const championImage = document.createElement('img')
+    championImage.setAttribute('src', champion.image) //parent div and append each element
+
     console.log(championName)
-    //debugger
 
-
-    // const championTags = champions.tags
-    // console.log(champion.tags)
-    // championsTags.map((champions) => {
-    //   return champion.tags
-    // })
   })
+
 }
+
+//make a new array for renderchampions
+//update the divs within the champion containers
+//another function that is like a select champion function that takes the champions object
+//create a new array and push into the array via a for loop with i > 5 for 6
+//array at the index of the math.random, then render the new array.
+//math.random is the index
+
+// let championArray = []
+
+// function getSix(champions) {
+//   for (let i = 0; i < 5; i++) {
+//     championArray.push(champion)
+//     renderchampions()
+//   }
+// }
+
+// getSix()
+
+// function renderChampions(champions) {
+//   let championArray = []
+//   for (let i = 0; i < 5; i++) {
+//     championArray.push(Math.random(champions))
+
+//     const championName = document.createElement('h3')
+//     championName.innerText = `${champion.name}`
+//     champ.appendChild(championName);
+
+//     const championTitle = document.createElement('p')
+//     championTitle.innerText = `${champion.title}`
+//     champ.appendChild(championTitle);
+
+//     const championImage = document.createElement('img')
+
+//   }
+// }
