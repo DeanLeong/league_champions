@@ -26,7 +26,7 @@
 // }
 
 function searchOptions() { //Refactored above code, don't need to run JSON yet.
-  const classList = ["Controller", "Fighter", "Mage", "Marksman", "Slayer", "Tank"]
+  const classList = ["Controller", "Fighter", "Mage", "Marksman", "Slayer", "Tank"] //Makes the dropdown search menu use the strings in this array.
   championClassSearch(classList)
 }
 
@@ -34,8 +34,8 @@ function searchOptions() { //Refactored above code, don't need to run JSON yet.
 searchOptions() //Calls getOptions
 
 function championClassSearch(classList) { //Creates the extra options needed to have a dropdown list according to what is passed into it.
-  const select = document.querySelector('select')
-  return classList.forEach((championClass) => {
+  const select = document.querySelector('select') //The select is the dropdown menu
+  return classList.forEach((championClass) => { //In this function is where I need to have the searched dropdown item compare to the champion tags.
     console.log(championClass)
     const option = document.createElement('option')
     option.value = `${championClass}`
@@ -49,9 +49,7 @@ const getChampions = async () => { //Grabs the JSON and the champions
   try { //Try catch to run the JSON through axios and if it does, list will equal response.data.data
     const response = await axios.get(url)
     const champions = Object.values(response.data.data) //Array for the dropdown options.
-    //console.log(champions)
-    champions.forEach(champion => console.log(champion.name, champion.tags, champion.title, champion.image.full))
-    renderChampions(champions)
+    renderChampions(champions) //renderChampions is going to actually grab all of the info from the API and stick it on the HTML.
   } catch (error) {
     console.log(`Error: ${error}`) //Detailed error logging
   }
@@ -61,16 +59,32 @@ getChampions()
 
 const champ = document.querySelector('.append-champion')
 
-function renderChampions() {
-  for (champion in champions) {
+function renderChampions() { //This function will grab the champions with the appropriate tags when compared to class and display them on screen. There will most likley
+  for (champion in champions) { //need to be an if else to compare the search to the champion tags.
     const championName = document.querySelector(".champion-name")
     championName.innerHtml = champions[champion].name
     champ.appendChild(championName);
     const championTags = champions.tags
+    console.log(champion.tags)
     championsTags.map((champions) => {
       return champion.tags
     })
   }
+}
+
+const renderChampions = champions => { //How to use map and math in this situation?
+  champions.forEach(champion => {
+    const championContainer = document.getElementByClassName("champContainer")
+
+    const championImage = document.getElementByClassName("champion-image")
+    //How to append image? Need to use downloaded images most likley.
+
+    const championName = document.getElementByClassName("champion-name")
+    championName.innerHTML = `${champion.name}`
+
+    const championTitle = document.getElementByClassName("champion-title")
+    championTitle.innerHTML = `${champion.title}`
+  })
 }
 
 //champions.forEach(champion => console.log(champion.name, champion.tags, champion.title, champion.image.full))
