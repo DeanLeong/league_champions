@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+}
+
+.champContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}

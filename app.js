@@ -14,16 +14,14 @@
 //Object.values(response.data.data)
 
 
-// const searchOptions = async () => { //Grabs the JSON and uses the JSON info to populate the list.
-//   const url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json' //The JSON
-//   try { //Try catch to run the JSON through axios and if it does, list will equal response.data.data
-//     const response = await axios.get(url)
-//     const classList = ["Controller", "Fighter", "Mage", "Marksman", "Slayer", "Tank"] //Array for the dropdown options. hardcodec classes
-//     championClassSearch(classList) //runs championClassSearch on list, which populates the dropdown bar with the provided info
-//   } catch (error) {
-//     console.log(`Error: ${error}`) //Detailed error logging
-//   }
-// }
+//make a new array for renderchampions
+//update the divs within the champion containers
+//another function that is like a select champion function that takes the champions object
+//create a new array and push into the array via a for loop with i > 5 for 6
+//array at the index of the math.random, then render the new array.
+//math.random is the index
+
+
 
 function searchOptions() { //Refactored above code, don't need to run JSON yet.
   const classList = ["Controller", "Fighter", "Mage", "Marksman", "Slayer", "Tank"] //Makes the dropdown search menu use the strings in this array.
@@ -49,6 +47,7 @@ const getChampions = async () => { //Grabs the JSON and the champions
   try { //Try catch to run the JSON through axios and if it does, list will equal response.data.data
     const response = await axios.get(url)
     const champions = Object.values(response.data.data) //Array for the dropdown options.
+    console.log(champions)
     renderChampions(champions) //renderChampions is going to actually grab all of the info from the API and stick it on the HTML.
   } catch (error) {
     console.log(`Error: ${error}`) //Detailed error logging
@@ -57,35 +56,23 @@ const getChampions = async () => { //Grabs the JSON and the champions
 
 getChampions()
 
-const champ = document.querySelector('.append-champion')
 
-function renderChampions() { //This function will grab the champions with the appropriate tags when compared to class and display them on screen. There will most likley
-  for (champion in champions) { //need to be an if else to compare the search to the champion tags.
-    const championName = document.querySelector(".champion-name")
-    championName.innerHtml = champions[champion].name
+const champ = document.querySelector('.champContainer')
+
+function renderChampions(champions) { //This function will grab the champions with the appropriate tags when compared to class and display them on screen. There will most likley
+  champions.map((champion) => { //need to be an if else to compare the search to the champion tags.
+    const championName = document.createElement('h3')
+    document.createElement //parent div and append each element
+    championName.innerText = `${champion.name}`
     champ.appendChild(championName);
-    const championTags = champions.tags
-    console.log(champion.tags)
-    championsTags.map((champions) => {
-      return champion.tags
-    })
-  }
-}
+    console.log(championName)
+    //debugger
 
-const renderChampions = champions => { //How to use map and math in this situation?
-  champions.forEach(champion => {
-    const championContainer = document.getElementByClassName("champContainer")
 
-    const championImage = document.getElementByClassName("champion-image")
-    //How to append image? Need to use downloaded images most likley.
-
-    const championName = document.getElementByClassName("champion-name")
-    championName.innerHTML = `${champion.name}`
-
-    const championTitle = document.getElementByClassName("champion-title")
-    championTitle.innerHTML = `${champion.title}`
+    // const championTags = champions.tags
+    // console.log(champion.tags)
+    // championsTags.map((champions) => {
+    //   return champion.tags
+    // })
   })
 }
-
-//champions.forEach(champion => console.log(champion.name, champion.tags, champion.title, champion.image.full))
-//DO NOT LOSE WILL SHOW INFO I WANT
