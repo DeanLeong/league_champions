@@ -4,18 +4,8 @@ body {
 
 .champContainer {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto;
   justify-content: space-evenly;
-}
-
-
-.champName {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: space-around;
 }
 
 .champImage {
@@ -25,3 +15,22 @@ body {
 .champName {
   grid-row: 2 / 2;
 }
+
+.champTitle {
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 800px) {
+  .champContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .champImage {
+    width: 100px;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
+/* set max px for champ images */
