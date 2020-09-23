@@ -62,7 +62,7 @@ function renderChampions(randomizedChampions) { //This function will grab the ch
 
     const championImage = document.createElement('img') //the next block of code sets variables for each element I want to display on the page
     championImage.className = "champImage" //gives them classes I can use in css
-    championImage.setAttribute('src', `./champions/${champion.name}.png`) //parent div and what I want going into it
+    championImage.setAttribute('src', `./loading/${champion.name}_0.jpg`, 'alt', `./loading_cntd/${champion.name}_0.jpg`) //parent div and what I want going into it
     champ.appendChild(championImage) //does the actual appending
 
     const championName = document.createElement('h3')
@@ -109,3 +109,4 @@ form.addEventListener('submit', getValue)
 //Post MVP
 //Full Blurbs?
 //Fallback for champions with hypens, spaces etc.
+//Better Pictures
