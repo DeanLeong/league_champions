@@ -34,4 +34,8 @@ body {
   }
 }
 
+body {
+  background-image: url(https://raw.githubusercontent.com/DeanLeong/league_champions/master/rift_picture/02_Summoner_s_Rift_hi182k3q611izhk9dbql.jpg)
+}
+
 /* set max px for champ images */
