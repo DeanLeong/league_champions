@@ -91,10 +91,10 @@ https://imgur.com/a/QvflsbV
 | --- | :---: |  :---: | :---: | :---: |
 | JS Axios | H | 2hrs| 30mins | 30mins |
 | Basic HTML of site | H | 3hrs| 1hrs | 1hrs |
-| JS Search Functionality | H | 8hrs| 5hrs | hrs |
-| Image Results | H | 3hrs| 3hrs | hrs |
-| Clear old Images | l | 3hrs| 1hrs | hrs |
-|Breakpoints| H | 5hrs| 3hrs | hrs |
+| JS Search Functionality | H | 8hrs| 10hrs | 10hrs |
+| Image Results | H | 3hrs| 3hrs | 3hrs |
+| Clear old Images | l | 3hrs| 1hrs | 1hrs |
+|Breakpoints| H | 5hrs| 3hrs | 3hrs |
 | ButtonClick goes to Second page | l | 5hrs| hrs | hrs |
 | Second page HTML| l | 2hrs| hrs | hrs |
 | Second page js Functionality | l | 4hrs| hrs | hrs |
