@@ -2,6 +2,14 @@ body {
   text-align: center;
 }
 
+h1 span {
+  background-color: azure;
+}
+
+.instructions span {
+  background-color: azure;
+}
+
 .champContainer {
   display: grid;
   grid-template-columns: auto;
@@ -15,10 +23,12 @@ body {
 
 .champName {
   grid-row: 2 / 2;
+  background-color: azure;
 }
 
 .champTitle {
   margin-top: 0px;
+  background-color: azure;
 }
 
 @media screen and (max-width: 800px) {
