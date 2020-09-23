@@ -59,6 +59,12 @@ function randomizeChampions(filteredChampions) { //use an if else statement for 
 
 function renderChampions(randomizedChampions) { //This function will grab the champions with the appropriate tags when compared to class and display them on screen. There will most likley
   randomizedChampions.map((champion) => { //need to be an if else to compare the search to the champion tags.
+
+    const championImage = document.createElement('img')
+    championImage.className = "champImage"
+    championImage.setAttribute('src', `./champions/${champion.name}.png`) //parent div and append each element
+    champ.appendChild(championImage)
+
     const championName = document.createElement('h3')
     championName.className = "champName"
     championName.innerText = `${champion.name}`
@@ -69,11 +75,10 @@ function renderChampions(randomizedChampions) { //This function will grab the ch
     championTitle.innerText = `${champion.title}`
     champ.appendChild(championTitle);
 
-    const championImage = document.createElement('img')
-    championImage.className = "champImage"
-    championImage.setAttribute('src', `./champions/${champion.name}.png`) //parent div and append each element
-    champ.appendChild(championImage)
-
+    // const championBlurb = document.createElement('p')
+    // championBlurb.className = "champBlurb"
+    // championBlurb.innerText = `${champion.blurb}`
+    // champ.appendChild(championBlurb)
 
     console.log(championName)
 
