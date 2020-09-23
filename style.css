@@ -3,11 +3,11 @@ body {
 }
 
 h1 span {
-  background-color: azure;
+  background-color: #96938c;
 }
 
 .instructions span {
-  background-color: azure;
+  background-color: #96938c;
 }
 
 .champContainer {
@@ -27,13 +27,15 @@ h1 span {
 }
 
 .champName {
+  display: inline-block;
+  width: auto;
   grid-row: 2 / 2;
-  background-color: azure;
+  background-color: #96938c;
 }
 
 .champTitle {
   margin-top: 0px;
-  background-color: azure;
+  background-color: #96938c;
 }
 
 @media screen and (max-width: 800px) {
