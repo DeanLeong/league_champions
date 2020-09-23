@@ -20,7 +20,7 @@ function championClassSearch(classList) { //Creates the extra options needed to 
 
 const getChampions = async (optionValue) => { //Grabs the JSON and the champions
   removePic() //Removes the old set of pictures
-  const url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json' //The JSON
+  const url = 'https://ddragon.leagueoflegends.com/cdn/10.19.1/data/en_US/champion.json' //The JSON
   try { //Try catch to run the JSON through axios and if it does, list will equal response.data.data
     const response = await axios.get(url) //Nothing happens until the JSON runs through axios
     let champions = Object.values(response.data.data) //Array for the dropdown options
