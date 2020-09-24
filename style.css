@@ -8,6 +8,7 @@ h1 span {
   border: 2px;
   border-style: solid;
   border-color: gold;
+  text-shadow: -1px 0 gold, 0 1px gold, 1px 0 gold, 0 -1px gold;
 }
 
 .instructions span {
@@ -17,6 +18,15 @@ h1 span {
   border-radius: 35px;
   border-color: gold;
   font-weight: bold;
+  font-size: large;
+}
+
+#select-class:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .champContainer {
@@ -28,11 +38,12 @@ h1 span {
 .champImage {
   grid-row: 1 / 1;
   width: 250px;
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 .champImage:hover {
   transform: scale(1.5);
+  transition: .25s;
 }
 
 .champName {
@@ -41,16 +52,17 @@ h1 span {
   text-align: center;
   grid-row: 2 / 2;
   color: lightblue;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
   font-weight: 900;
 }
 
 .champTitle {
   margin-top: 0px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
   color: lightblue;
   font-weight: 900;
 }
+
 
 @media screen and (max-width: 800px) {
   .champContainer {
@@ -68,5 +80,3 @@ h1 span {
 body {
   background-image: url(https://raw.githubusercontent.com/DeanLeong/league_champions/master/rift_picture/02_Summoner_s_Rift_hi182k3q611izhk9dbql.jpg)
 }
-
-/* set max px for champ images */

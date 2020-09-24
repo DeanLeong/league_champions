@@ -1,4 +1,4 @@
-function searchOptions() { //Refactored above code, don't need to run JSON yet.
+function searchOptions() {
   const classList = ["Support", "Fighter", "Mage", "Marksman", "Assassin", "Tank"] //Makes the dropdown search menu use the strings in this array.
   championClassSearch(classList)
 }
@@ -74,11 +74,6 @@ function renderChampions(randomizedChampions) { //This function will grab the ch
     championTitle.className = "champTitle"
     championTitle.innerText = `${champion.title}`
     champ.appendChild(championTitle);
-
-    // const championBlurb = document.createElement('p')//The blurbs are cut short, so sad
-    // championBlurb.className = "champBlurb"
-    // championBlurb.innerText = `${champion.blurb}`
-    // champ.appendChild(championBlurb)
 
     console.log(championName) //Logs the name of each champion that populates the page
 
