@@ -65,12 +65,12 @@ function renderChampions(randomizedChampions) { //This function will grab the ch
     championImage.setAttribute('src', `./loading/${champion.name}_0.jpg`, 'alt', `./loading_cntd/${champion.name}_0.jpg`) //parent div and what I want going into it
     champ.appendChild(championImage) //does the actual appending
 
-    const championName = document.createElement('h3')
+    const championName = document.createElement('h2')
     championName.className = "champName"
     championName.innerText = `${champion.name}`
     champ.appendChild(championName);
 
-    const championTitle = document.createElement('h5')
+    const championTitle = document.createElement('h3')
     championTitle.className = "champTitle"
     championTitle.innerText = `${champion.title}`
     champ.appendChild(championTitle);

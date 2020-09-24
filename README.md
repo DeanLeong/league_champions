@@ -99,7 +99,8 @@ https://imgur.com/a/QvflsbV
 | Second page HTML| l | 2hrs| hrs | hrs |
 | Second page js Functionality | l | 4hrs| hrs | hrs |
 | Second page CSS| l | 3hrs| hrs | hrs |
-| General CSS Design | l | 3hrs| hrs | hrs |
+| General CSS Design | l | 3hrs| 6hrs | hrs |
+| Image File Organization | l | 2hrs| 2hrs | hrs |
 | Total | H | 38hrs| hrs | hrs |
 
 ## Code Snippet

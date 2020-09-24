@@ -3,11 +3,12 @@ body {
 }
 
 h1 span {
-  background-color: #96938c;
+  background-color: rgba(255, 255, 255, 0.5)
 }
 
 .instructions span {
-  background-color: #96938c;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
 }
 
 .champContainer {
@@ -32,13 +33,17 @@ h1 span {
   text-align: center;
   grid-row: 2 / 2;
   /* background-color: #96938c; */
-  text-shadow: 2px 2px blue;
+  color: lightblue;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-weight: 900;
 }
 
 .champTitle {
   margin-top: 0px;
   /* background-color: #96938c; */
-  text-shadow: 2px 2px blue;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: lightblue;
+  font-weight: 900;
 }
 
 @media screen and (max-width: 800px) {
