@@ -58,16 +58,16 @@ Champion Page Mobile - Same as champion page but scaled to mobile screens.
 ### MVP/PostMVP
 
 MPV -
-1. The champion images are pulled up along with their names and titles.
-2. I want each search to return six results.
-3. The page adjusts to a mobile screen.
+1. The champion images are pulled up along with their names and titles. x
+2. I want each search to return six results. x
+3. The page adjusts to a mobile screen. x
 
 Post MVP -
-1. Extra UI Interaction.
+1. Extra UI Interaction. x
 2. Show abilities of champion - Might require more APIs.
 3. Another API
 4. Second page with more detain when champion is clicked on.
-5. A hover function so that when images are hovered over they enlarge and it is clear that the image is clickable.
+5. A hover function so that when images are hovered over they enlarge and it is clear that the image is clickable. x - Hover function yes but not clickable.
 
 ## Project Schedule
 
@@ -92,6 +92,7 @@ https://imgur.com/a/QvflsbV
 | JS Axios | H | 2hrs| 30mins | 30mins |
 | Basic HTML of site | H | 3hrs| 1hrs | 1hrs |
 | JS Search Functionality | H | 8hrs| 10hrs | 10hrs |
+| JS General| H | 3hrs| 5hrs | 5hrs |
 | Image Results | H | 3hrs| 3hrs | 3hrs |
 | Clear old Images | l | 3hrs| 1hrs | 1hrs |
 |Breakpoints| H | 5hrs| 3hrs | 3hrs |
@@ -101,6 +102,7 @@ https://imgur.com/a/QvflsbV
 | Second page CSS| l | 3hrs| hrs | hrs |
 | General CSS Design | l | 3hrs| 6hrs | hrs |
 | Image File Organization | l | 2hrs| 2hrs | hrs |
+| Remove duplicates | l | 5hrs| 2hrs | hrs |
 | Total | H | 38hrs| hrs | hrs |
 
 ## Code Snippet

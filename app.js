@@ -100,7 +100,6 @@ function removePic() { //removes the old pictures on each new search so the page
 const form = document.querySelector('form') //The actual event listener for the form submission
 form.addEventListener('submit', getValue)
 
-
 //Post MVP
 //Full Blurbs?
 //Fallback for champions with hypens, spaces etc.
