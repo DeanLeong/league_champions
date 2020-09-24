@@ -28,14 +28,17 @@ h1 span {
 
 .champName {
   display: inline-block;
-  width: auto;
+  justify-content: center;
+  text-align: center;
   grid-row: 2 / 2;
-  background-color: #96938c;
+  /* background-color: #96938c; */
+  text-shadow: 2px 2px blue;
 }
 
 .champTitle {
   margin-top: 0px;
-  background-color: #96938c;
+  /* background-color: #96938c; */
+  text-shadow: 2px 2px blue;
 }
 
 @media screen and (max-width: 800px) {
