@@ -60,12 +60,12 @@ function renderChampions(randomizedChampions) { //This function will grab the ch
     championImage.setAttribute('src', `./loading/${champion.name}_0.jpg`, 'alt', `./loading_cntd/${champion.name}_0.jpg`) //parent div and what I want going into it
     champ.appendChild(championImage) //does the actual appending
 
-    const championName = document.createElement('h2')
+    const championName = document.createElement('h2') //Displays the champion names
     championName.className = "champName"
     championName.innerText = `${champion.name}`
     champ.appendChild(championName);
 
-    const championTitle = document.createElement('h3')
+    const championTitle = document.createElement('h3') //Displays the champion titles
     championTitle.className = "champTitle"
     championTitle.innerText = `${champion.title}`
     champ.appendChild(championTitle);
@@ -75,14 +75,14 @@ function renderChampions(randomizedChampions) { //This function will grab the ch
 
 function getValue(e) { //The search doesn't run until the user selects something and hits search
   e.preventDefault()
-  const optionValue = document.querySelector('#select-class').value
+  const optionValue = document.querySelector('#select-class').value //Sets optionValue to whatever is picked in the search dropdown. optionValue is used very frequently in the code
   getChampions(optionValue)
 }
 
 
 function removePic() { //removes the old pictures on each new search so the page doesn't fill up
-  const oldPic = document.querySelector('.champContainer')
-  while (oldPic.lastChild) {
+  const oldPic = document.querySelector('.champContainer') //Sets oldpic to the champContainer
+  while (oldPic.lastChild) { //While there are images on the page they will be removed on the next search because removePic is called in getChampions
     oldPic.removeChild(oldPic.lastChild)
   }
 }
