@@ -96,7 +96,7 @@ https://imgur.com/a/QvflsbV
 | JS Refactor/Cleanup| H | 2hrs| 1hrs | 1hrs |
 | Image Results | H | 3hrs| 3hrs | 3hrs |
 | Clear old Images | l | 3hrs| 1hrs | 1hrs |
-|Breakpoints| H | 5hrs| 3hrs | 3hrs |
+|Breakpoints/Media Query| H | 5hrs| 3hrs | 3hrs |
 | General CSS Design | H | 3hrs| 4hrs | 4hrs |
 | Post-MVP CSS Design | l | 3hrs| 4hrs | 5hrs |
 | Image File Organization | l | 2hrs| 2hrs | 2hrs |
@@ -105,13 +105,21 @@ https://imgur.com/a/QvflsbV
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+This code snippet is something that I'm proud of because it is something of a crossroad in my code. Within it are callbacks to several other functions and they all come together here to actually make the array of the desired champions, that are then displayed on page later in the program. I'm impressed with this code mainly becuase of all of the callbacks and methods involved. One of the few ways that this could have been improved is using the set method to remove duplicates.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+function randomizeChampions(filteredChampions) { //use an if else statement for search? If support, run randomize champions etc? - the filter takes care of this.
+  let randomizedChampions = [] //Empty array that the randomized champions are going to be pushed into
+  for (let i = 0; i < 6; i++) { //for loop so that only six champions actually go into the array
+    let num = Math.floor(Math.random() * filteredChampions.length) //This is the part where the filered champions are randomized
+    randomizedChampions.push(filteredChampions[num]) //The randomized champions are then pushed into the array
+
+  }
+  renderChampions(randomizedChampions) //Runs renderChampions for each randomizedChampions
 }
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.
+The initial plan was to have a second page as a post-MVP project. The second page would be accessed by clicking on the champion image and would take the user to a more detailed page about that champion. The reason this wasn't done in post-MVP is that there wasn't an applicable API that fit the scope of the project.
+
+Images had to be downloaded and then uploaded to Github. Some also had to be renamed to show on page.
