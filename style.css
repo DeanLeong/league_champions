@@ -77,6 +77,27 @@ button:hover {
   }
 }
 
+@media screen and (max-width: 400px) {
+  h1 span {
+    font-size: medium;
+  }
+
+  .instructions span {
+    font-size: x-small;
+  }
+
+  .champContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .champImage {
+    width: 100px;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
 body {
   background-image: url(https://raw.githubusercontent.com/DeanLeong/league_champions/master/rift_picture/02_Summoner_s_Rift_hi182k3q611izhk9dbql.jpg)
 }

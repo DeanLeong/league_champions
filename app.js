@@ -41,7 +41,7 @@ function filterChampions(allChampions, optionValue) { //This is the filter funct
 }
 
 
-function randomizeChampions(filteredChampions) { //use an if else statement for search? If support, run randomize champions etc?
+function randomizeChampions(filteredChampions) { //use an if else statement for search? If support, run randomize champions etc? - filter takes care of this
   let randomizedChampions = [] //Empty array that the randomized champions are going to be pushed into
   for (let i = 0; i < 6; i++) { //for loop so that only six champions actually go into the array
     let num = Math.floor(Math.random() * filteredChampions.length) //This is the part where the filered champions are randomized
