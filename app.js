@@ -4,12 +4,11 @@ function searchOptions() {
 }
 
 
-searchOptions() //Calls getOptions
+searchOptions() //Calls searchOptions
 
 function championClassSearch(classList) { //Creates the extra options needed to have a dropdown list according to what is passed into it.
   const select = document.querySelector('select') //The select is the dropdown menu
   return classList.forEach((championClass) => { //In this function is where I need to have the searched dropdown item compare to the champion tags.
-    console.log(championClass) //Log to help make sure the classes are coming through
     const option = document.createElement('option') //Populates the options actually might not be needed since the dropdown has been hardcoded
     option.value = `${championClass}`
     option.textContent = `${championClass}`
@@ -25,9 +24,7 @@ const getChampions = async (optionValue) => { //Grabs the JSON and the champions
     const response = await axios.get(url) //Nothing happens until the JSON runs through axios
     let champions = Object.values(response.data.data) //Array for the dropdown options
     filterChampions(champions, optionValue) //calls the filter champions function and passes champions, optionValue through it
-  } catch (error) {
-    console.log(`Error: ${error}`) //Detailed error logging
-  }
+  } catch (error) {}
 }
 
 
@@ -40,7 +37,6 @@ function filterChampions(allChampions, optionValue) { //This is the filter funct
   let filteredChampions = allChampions.filter(champion => //Sets the variable filteredChampions to allChampions.filter which is grabbing just the champion tags that were selected in optionValue
     champion.tags.includes(optionValue)
   )
-  console.log(filteredChampions) //Logs all champions of the correct tag
   randomizeChampions(filteredChampions) //Runs the randomize champion on filteredChampions, first all of the champions of the correct class are grabbed and then they are randomized
 }
 
@@ -52,7 +48,6 @@ function randomizeChampions(filteredChampions) { //use an if else statement for 
     randomizedChampions.push(filteredChampions[num]) //The randomized champions are then pushed into the array
 
   }
-  console.log(randomizedChampions) //Logs the randomized champions
   renderChampions(randomizedChampions) //Runs renderChampions for each randomizedChampions
 }
 
@@ -74,18 +69,13 @@ function renderChampions(randomizedChampions) { //This function will grab the ch
     championTitle.className = "champTitle"
     championTitle.innerText = `${champion.title}`
     champ.appendChild(championTitle);
-
-    console.log(championName) //Logs the name of each champion that populates the page
-
   })
-  //randomizeChampions(champions)
 }
 
 
 function getValue(e) { //The search doesn't run until the user selects something and hits search
   e.preventDefault()
   const optionValue = document.querySelector('#select-class').value
-  console.log(optionValue)
   getChampions(optionValue)
 }
 
@@ -99,8 +89,3 @@ function removePic() { //removes the old pictures on each new search so the page
 
 const form = document.querySelector('form') //The actual event listener for the form submission
 form.addEventListener('submit', getValue)
-
-//Post MVP
-//Full Blurbs?
-//Fallback for champions with hypens, spaces etc.
-//Better Pictures
